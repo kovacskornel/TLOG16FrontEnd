@@ -20,12 +20,17 @@ and open the template in the editor.
     <body class = "calendar">
         
         <div class="container-fluid">
-            <div class="row navbar">
-                <div class="col-md-2 col-xs-12">TimeLogger</div>
-                <div class="col-md-2 col-xs-6 navbar button">Calendar view</div>
-                <div class="col-md-2 col-xs-6 navbar button">Task-list view</div>
+            <div class="row">
+                <nav class="navbar navbar-default">
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+                        <a class="navbar-brand" href="index.html">TimeLogger</a>
+                        <ul class="nav navbar-nav">
+                                <li class="navbar-inverse"><a href="index.html">Calendar view</a></li>
+                                <li class="navbar-inverse"><a href="taskview.html">Tasks list-view</a></li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
-            <div class="col-md-6"></div>
             <div class = "row">
                 <div class = "col-md-3 col-xs-12 jumbotron">
                     
@@ -66,8 +71,8 @@ and open the template in the editor.
                         </tr>
                         <tr>
                             <td>2<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td class="workday">3<br/>
-                    <font class="red">Extra minutes today: -100</font></td>
+                        <td class="workday">3<a href="taskview.html"><br/>
+                                <font class="red">Extra minutes today: -100</font></a></td>
                             <td>4<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
                             <td>5<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
                             <td>6<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
