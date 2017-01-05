@@ -11,14 +11,12 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="TimeLogger styles.css" type="text/css">
-        <link rel="stylesheet" href="TimeLogger styles.css" type="text/css"/>
-        <link rel="stylesheet" href="TimeLogger styles.css" type="text/css">
-
-
-
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="jquery.js"></script>
+        <script src="../node_modules/datejs/build/date.js"></script>
+        
     </head>
     <body class = "calendar">
-        
         <div class="container-fluid">
             <div class="row">
                 <nav class="navbar navbar-default">
@@ -29,7 +27,6 @@ and open the template in the editor.
                                 <li class="navbar-inverse"><a href="taskview.html">Tasks list-view</a></li>
                         </ul>
                     </div>
-                </nav>
             </div>
             <div class = "row">
                 <div class = "col-md-3 col-xs-12 jumbotron">
@@ -39,84 +36,17 @@ and open the template in the editor.
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-lg-2 col-md-4 col-xs-12 sel">
-                    <button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
-  <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-</button>2017-01
-<button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
-  <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-</button>
+                    <button type="button" id="prev_month" class="btn btn-default btn-lg" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                    </button><b id="mymonth"></b>
+                    <button type="button" id="next_month" class="btn btn-default btn-lg" aria-label="next_month">
+                    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    </button>
                 </div>
             </div>
-                <table class = "table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Mon</th>
-                            <th>Tue</th>
-                            <th>Wed</th>
-                            <th>Thu</th>
-                            <th>Fri</th>
-                            <th>Sat</th>
-                            <th>Sun</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>1<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                        </tr>
-                        <tr>
-                            <td>2<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                        <td class="workday">3<a href="taskview.html"><br/>
-                                <font class="red">Extra minutes today: -100</font></a></td>
-                            <td>4<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>5<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>6<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>7<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>8<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                        </tr>
-                        <tr>
-                            <td>9<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>10<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>11<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>12<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>13<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>14<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>15<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                        </tr>
-                        <tr>
-                            <td>16<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>17<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>18<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>19<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>20<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>21<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>22<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                        </tr>
-                        <tr>
-                            <td>23<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>24<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>25<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>26<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>27<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>28<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>29<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                        </tr>
-                        <tr>
-                            <td>30<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td>31<div class="buttn"><button type="button" class=" btn-default btn-md btn">                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>                                    </button></div></div></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <table id="calendar">
+                                
+            </table>
             </div>
     </body>
 </html>
