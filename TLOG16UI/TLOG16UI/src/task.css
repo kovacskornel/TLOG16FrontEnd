@@ -1,0 +1,43 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 4, 2017, 3:50:10 PM
+    Author     : precognox
+*/
+
+.center {
+    text-align: center;
+}
+
+.calendar {
+    background: #f2f2f2;
+}
+
+.navbar {
+    background-color: lightskyblue;
+    color: gray;
+    font-size: 20px;
+    height: 40px;
+    text-align: center;
+    
+}
+
+.navbar.button{
+    font-size: 17px;
+    background-color: darkslategray;
+    color: lightgray;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+}
+th{
+    height: 10%;
+    text-align: center;
+    border: 1px solid black;
+    background-color: lightblue;
+}

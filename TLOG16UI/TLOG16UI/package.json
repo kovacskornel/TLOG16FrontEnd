@@ -1,0 +1,18 @@
+{
+  "name": "TLOG16FrontEnd",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "precognox",
+  "contributors": [],
+  "dependencies": {
+    "datejs": "^1.0.0-rc3",
+    "jquery": "^3.1.1",
+    "package": "^1.0.1"
+  }
+}
