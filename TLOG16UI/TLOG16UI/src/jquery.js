@@ -25,7 +25,7 @@ $(document).ready(function () {
                 satsun = "Saturday";
             if (iddate.getDay() === 3)
                 satsun = "Sunday";
-            var r = confirm("Are you sure you want to work on " + satsun + "?");
+            var r = confirm("Are you sure you want to work on " + satsun + "?","");
             if (r)
             {
                 req = prompt("Please give me the required working hours in minutes", "450");
