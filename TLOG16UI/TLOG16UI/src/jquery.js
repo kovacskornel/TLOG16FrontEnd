@@ -17,22 +17,57 @@ $(document).ready(function () {
         idyear = splitid[0];
         idmonth = splitid[1];
         idday = splitid[2];
-        req = prompt("Please give me the required working hours in minutes", "450");
-        if(req < 1) req = 450;
-        var workday = {
-            year: idyear,
-            month: idmonth,
-            day: idday,
-            requiredHours: req
-        };
-        $.ajax({
-            url: "http://127.0.0.1:9090/tlog-backend/timelogger/workmonths/workdays",
-            type: "POST",
-            contentType: "application/json",
-            dataType: 'json',
-            data: JSON.stringify(workday)
-        });
-        printCalendar(actmonth);
+        iddate = new Date(idyear, idmonth, idday);
+        if (iddate.getDay() === 2 || iddate.getDay() === 3)
+        {
+            var satsun;
+            if (iddate.getDay() === 2)
+                satsun = "Saturday";
+            if (iddate.getDay() === 3)
+                satsun = "Sunday";
+            var r = confirm("Are you sure you want to work on " + satsun + "?");
+            if (r)
+            {
+                req = prompt("Please give me the required working hours in minutes", "450");
+                if (req !== null)
+                {
+                    var workday = {
+                        year: idyear,
+                        month: idmonth,
+                        day: idday,
+                        requiredHours: req
+                    };
+                    $.ajax({
+                        url: "http://127.0.0.1:9090/tlog-backend/timelogger/workmonths/workdays/weekend",
+                        type: "POST",
+                        contentType: "application/json",
+                        dataType: 'json',
+                        data: JSON.stringify(workday)
+                    });
+                    printCalendar(actmonth);
+                }
+            }
+        } else
+        {
+            req = prompt("Please give me the required working hours in minutes", "450");
+            if (req !== null)
+            {
+                var workday = {
+                    year: idyear,
+                    month: idmonth,
+                    day: idday,
+                    requiredHours: req
+                };
+                $.ajax({
+                    url: "http://127.0.0.1:9090/tlog-backend/timelogger/workmonths/workdays",
+                    type: "POST",
+                    contentType: "application/json",
+                    dataType: 'json',
+                    data: JSON.stringify(workday)
+                });
+                printCalendar(actmonth);
+            }
+        }
     });
 
     function printCalendar(date) {
@@ -108,7 +143,7 @@ $(document).ready(function () {
                     var thisday = new Date(actmonth.getFullYear(), actmonth.getMonth(), (i + 1));
                     if (thisday <= Date.today())
                     {
-                        tr += '<br><center><button type="button" class="btn btn-default btn-lg addday" id="'+actmonth.getFullYear().toString() + "-" + (actmonth.getMonth() + 1).toString() + "-" + (i + 1)+'" aria-label="Left Align"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></center>';
+                        tr += '<br><center><button type="button" class="btn btn-default btn-lg addday" id="' + actmonth.getFullYear().toString() + "-" + (actmonth.getMonth() + 1).toString() + "-" + (i + 1) + '" aria-label="Left Align"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></center>';
                     }
                 } else {
                     tr += '<td class = "workday">' + (i + 1);
